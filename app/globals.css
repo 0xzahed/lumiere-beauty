@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --cocoa: #352824;
+  --ivory: #fffdf8;
+  --blush: #f4e4e3;
+  --nude: #e8d5cb;
+  --sage: #dde5da;
+  --gold: #c7a77b;
+}
+
+html { scroll-behavior: smooth; }
+body { background: #fffdf8; color: #2b2421; -webkit-font-smoothing: antialiased; }
+
+@layer components {
+  .container-luxe { @apply mx-auto w-full max-w-[1280px] px-4 sm:px-6 lg:px-8; }
+  .h-serif { @apply font-serif tracking-tight; }
+  .eyebrow { @apply text-[11px] font-medium uppercase tracking-[0.22em] text-gold-dark; }
+  .btn-primary { @apply inline-flex items-center justify-center gap-2 bg-cocoa px-7 py-3.5 text-[13px] font-medium uppercase tracking-[0.14em] text-ivory transition-all hover:bg-ink hover:shadow-lift disabled:opacity-50; }
+  .btn-secondary { @apply inline-flex items-center justify-center gap-2 border border-cocoa/25 bg-transparent px-7 py-3.5 text-[13px] font-medium uppercase tracking-[0.14em] text-cocoa transition-all hover:border-cocoa hover:bg-cocoa hover:text-ivory; }
+  .btn-gold { @apply inline-flex items-center justify-center gap-2 bg-gold px-7 py-3.5 text-[13px] font-medium uppercase tracking-[0.14em] text-white transition-all hover:bg-gold-dark; }
+  .input-luxe { @apply w-full border border-line bg-white px-4 py-3 text-sm text-ink placeholder:text-muted/70 outline-none transition focus:border-cocoa/60 focus:ring-2 focus:ring-gold/20; }
+  .label-luxe { @apply mb-1.5 block text-[12px] font-medium uppercase tracking-[0.12em] text-muted; }
+  .card-luxe { @apply border border-line bg-white shadow-card; }
+  .badge-soft { @apply inline-flex items-center px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.14em]; }
+  .skeleton { @apply animate-pulse bg-line/80; }
+  .link-underline { @apply relative after:absolute after:-bottom-0.5 after:left-0 after:h-px after:w-0 after:bg-cocoa after:transition-all hover:after:w-full; }
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+}
+
+@layer utilities {
+  .text-balance { text-wrap: balance; }
+  .fade-up { animation: fadeUp .7s ease both; }
+}
+
+::selection { background: #c7a77b33; }
